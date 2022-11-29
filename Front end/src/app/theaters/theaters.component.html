@@ -1,0 +1,10 @@
+<div class="content">
+    <h1>Teatros</h1>
+
+    <div class="theaters" id="theater-cont">
+        <div *ngFor="let t of theaters" id="div{{t.name}}" class="card" (click)="changeTheater(t)">
+            <h3>{{t.name}} | {{t.location}}</h3>
+        </div>
+    </div>
+    <p id="warn" *ngIf="selTheater == undefined">Selecciona un teatro</p>
+</div>

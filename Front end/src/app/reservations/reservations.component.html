@@ -1,0 +1,26 @@
+<div class="reservations">
+    <h2>Reservar</h2>
+    <div class="room">
+        <p>Sala: {{func?.room}}</p>
+        <h3>Asientos</h3>
+        <table class="seats">
+            <tr *ngFor="let item of [].constructor(7); let i = index">
+                <td *ngFor="let item2 of [].constructor(10); let j = index">
+                    <div id="s{{i}}{{j}}" class="seat" (click)="toggleSeat(i + '' + j)">{{i}}{{j}}</div>
+                </td>
+            </tr>
+        </table>
+        <p>Valor total: ${{bill}}</p>
+    </div>
+    <div class="schedules">
+        <form name="reservation">
+            <h3>Fechas</h3>
+            <span *ngFor="let s of func?.schedules; let i = index">
+                <input type="radio" name="reservation" id="s{{i}}" value="{{s}}">
+                <label for="s{{i}}">{{parseDate(s)}}</label>
+            </span>
+            <input type="text" name="reservation" id="user" placeholder="Tu nombre">
+            <button type="button" (click)="makeReservation()">Reservar</button>
+        </form>
+    </div>
+</div>

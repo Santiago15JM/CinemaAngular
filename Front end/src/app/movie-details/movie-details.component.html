@@ -1,0 +1,27 @@
+<div class="container">
+  <img src="../assets/covers/{{ movie?.cover}}" alt="movie cover" draggable="false" />
+  <div class="movieInfo">
+    <h1>{{ movie?.title }}</h1>
+    <h2>{{ movie?.year }}</h2>
+    <p *ngIf="movie?.description">{{ movie?.description }}</p>
+  </div>
+  <div class="sidepane">
+    <!-- <div *ngIf="movie?.trailerLink">
+      <h2>Trailer</h2>
+      <iframe
+        width="100%"
+        src="https://www.youtube-nocookie.com/embed/imm6OR605UI"
+        title="Movie trailer"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div> -->
+    <div class="casting">
+      <h2>Cast</h2>
+      <p *ngFor="let actor of movie?.casting">{{ actor }}</p>
+    </div>
+  </div>
+</div>
+
+<app-reservations [func]="func"></app-reservations>

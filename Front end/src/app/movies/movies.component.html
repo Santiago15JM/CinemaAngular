@@ -1,0 +1,18 @@
+<div class="content">
+  <h1>Peliculas</h1>
+
+  <!-- <div class="billboardContainer">
+    <div class="card" *ngFor="let movie of billboard" [routerLink]="['/movies/details', movie.movieid]">
+      <h2>{{ movie.title }}</h2>
+      <img src="../assets/covers/{{ movie.cover }}" alt="movie cover" draggable="false" />
+      <h3>{{ movie.year }}</h3>
+    </div>
+  </div> -->
+  <div class="billboardContainer">
+    <div class="card" *ngFor="let func of functions" [routerLink]="['/movies/details', func._id]">
+      <h2>{{ func.movie.title }}</h2>
+      <img src="../assets/covers/{{ func.movie.cover }}" alt="movie cover" draggable="false" />
+      <h3>{{ func.movie.year }}</h3>
+    </div>
+  </div>
+</div>

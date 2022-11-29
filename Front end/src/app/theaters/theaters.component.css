@@ -1,0 +1,32 @@
+.card {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    align-items: flex-start;
+
+    width: 20%;
+    margin: 1em;
+    padding: 0 1em 0 1em;
+
+    background-color: #fff;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.4);
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+.theaters {
+    width: 100%;
+    display: inline-flex;
+}
+
+.selected {
+    background-color: blueviolet;
+}
+
+#warn{
+    color: red;
+}

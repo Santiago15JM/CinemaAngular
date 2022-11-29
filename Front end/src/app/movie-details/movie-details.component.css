@@ -1,0 +1,39 @@
+.container {
+  padding: 3% 10%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+img {
+  width: 30%;
+}
+
+.movieInfo {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 3em;
+  padding: 2em;
+  background-color: #eee;
+}
+
+.sidepane {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  background-color: #eee;
+  justify-content: space-between;
+}
+
+button {
+  color: white;
+  background-color: blueviolet;
+  border-radius: 6px;
+  border: 0;
+  padding: 10px 0;
+}
+
+button:hover {
+  cursor: pointer;
+}
