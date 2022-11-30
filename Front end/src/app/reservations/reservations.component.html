@@ -1,7 +1,7 @@
 <div class="reservations">
     <h2>Reservar</h2>
     <div class="room">
-        <p>Sala: {{func?.room}}</p>
+
         <h3>Asientos</h3>
         <table class="seats">
             <tr *ngFor="let item of [].constructor(7); let i = index">
@@ -10,6 +10,7 @@
                 </td>
             </tr>
         </table>
+        <p>Sala: {{func?.room}}</p>
         <p>Valor total: ${{bill}}</p>
     </div>
     <div class="schedules">
