@@ -15,15 +15,19 @@ export class ReservationsComponent implements OnInit {
   @Input() func?: Function
   bill = 0
   reservedSeats: string[] = []
+  selectedDate!: Date
 
   ngOnInit(): void {
+    console.log('selDate: ' + this.selectedDate);
+    
   }
 
   ngOnChanges() {
-    this.isReserved()
-    //Tachar los ocupados
+    this.resetSeats()
+    this.getReservedSeats()
+
     this.reservedSeats.forEach(seat => {
-      document.getElementById('s'+seat)?.classList.add('reserved')
+      document.getElementById('s' + seat)?.classList.add('reserved')
     });
   }
 
@@ -45,9 +49,9 @@ export class ReservationsComponent implements OnInit {
 
   makeReservation() {
     let dateElement: any = document.querySelector('input[name="reservation"]:checked');
-    let date
+    let date: Date
     if (dateElement != null) {
-      date = dateElement.value
+      date = new Date(dateElement.value)
     } else {
       alert('Selecciona una fecha')
       return
@@ -64,11 +68,10 @@ export class ReservationsComponent implements OnInit {
       return
     }
 
-    let reservation = new Reservation(user, Array.from(this.selSeats), new Date(date));
+    let reservation = new Reservation(user, Array.from(this.selSeats), date);
 
-    console.log(reservation);
     this.dbService.makeReservation(this.func?._id!, reservation)
-    // Recargar pagina
+    location.reload()
   }
 
   parseDate(date: Date): String {
@@ -76,10 +79,25 @@ export class ReservationsComponent implements OnInit {
     return `${ndate.toLocaleDateString()} ${ndate.toLocaleTimeString()}`
   }
 
-  isReserved() {
+  getReservedSeats() {
     this.func?.reservations.forEach(r => {
-      this.reservedSeats = this.reservedSeats.concat(r.seats)
+      if (r.date == this.selectedDate) {
+        this.reservedSeats = this.reservedSeats.concat(r.seats)
+      }
     })
+  }
+
+  changeSelDate(date: Date) {
+    this.selectedDate = date
+    this.ngOnChanges()
+  }
+
+  resetSeats() {
+    this.reservedSeats = []
+    let seats = document.getElementsByClassName('reserved')
+    for (let s of Array.from(seats)) {
+      s.classList.remove('reserved')
+    }
   }
 }
 

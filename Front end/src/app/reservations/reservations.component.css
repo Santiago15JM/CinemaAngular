@@ -69,4 +69,9 @@ button {
   color: white;
   border-width: 0;
   border-radius: 3px;
+  cursor: pointer;
+}
+
+#warn{
+  color: red;
 }
