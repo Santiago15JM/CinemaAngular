@@ -24,4 +24,4 @@
   </div>
 </div>
 
-<app-reservations [func]="func"></app-reservations>
+<app-reservations *ngIf="hasFunc" [func]="func"></app-reservations>

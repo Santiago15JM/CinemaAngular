@@ -68,6 +68,7 @@ export class ReservationsComponent implements OnInit {
 
     console.log(reservation);
     this.dbService.makeReservation(this.func?._id!, reservation)
+    // Recargar pagina
   }
 
   parseDate(date: Date): String {

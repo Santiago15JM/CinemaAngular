@@ -11,7 +11,11 @@ export class DatabaseService {
 
   constructor(private http: HttpClient) { }
 
-  getMovies(): Observable<any> {
+  getMovie(movieid: String): Observable<any> {
+    return this.http.get(this.url + 'getMovie/' + movieid)
+  }
+
+  getBillboard(): Observable<any> {
     return this.http.get(this.url + 'getBillboard/')
   }
 

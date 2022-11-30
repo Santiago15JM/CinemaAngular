@@ -1,0 +1,36 @@
+.billboardContainer {
+    display: flex;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    align-items: flex-start;
+  
+    width: 16%;
+    margin: 1em;
+    padding: 0 1em 0 1em;
+    /* border-radius: 10px; */
+  
+    background-color: #fff;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.4);
+  }
+  
+  .card:hover {
+    cursor: pointer;
+  }
+  
+  .card img {
+    width: 100%;
+    align-self: center;
+    object-fit: cover;
+  }
+  
+  .cover-details{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }

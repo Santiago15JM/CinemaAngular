@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     res.send('Main')
 })
 
-// router.get('/getMovie/:movieId', movieController.getMovie)
+router.get('/getMovie/:movieId', movieController.getMovie)
 router.get('/getFunction/:funcId', functionController.getFunction)
 router.get('/getBillboard', movieController.getBillboard)
 router.get('/getFunctions/:theaterId', functionController.getFunctions)

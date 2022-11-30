@@ -12,11 +12,17 @@ import { Movie } from '../models/Movie';
 export class MovieDetailsComponent implements OnInit {
   movie?: Movie;
   func?: Function;
+  hasFunc = false
   constructor(private route: ActivatedRoute, private dbService: DatabaseService) { }
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
-    this.getFunction(String(routeParams.get('funcId')))
+    if (routeParams.get('funcId') == null) {
+      this.getMovie(String(routeParams.get('movieId')))
+    } else {
+      this.hasFunc = true
+      this.getFunction(String(routeParams.get('funcId')))
+    }
   }
 
   getFunction(funcId: string) {
@@ -25,5 +31,10 @@ export class MovieDetailsComponent implements OnInit {
       this.movie = this.func.movie
     })
   }
-
+  
+  getMovie(movieId: string) {
+    this.dbService.getMovie(movieId).subscribe(data => {
+      this.movie = data as Movie
+    })
+  }
 }

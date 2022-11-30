@@ -1,0 +1,13 @@
+<div class="content">
+    <h1>Peliculas</h1>
+  
+    <div class="billboardContainer">
+      <div class="card" *ngFor="let m of billboard" [routerLink]="['/movie/details', m.movieid]">
+        <h2>{{ m.title }}</h2>
+        <img src="../assets/covers/{{ m.cover }}" alt="movie cover" draggable="false" />
+        <div class="cover-details">
+          <h3>{{ m.year }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>

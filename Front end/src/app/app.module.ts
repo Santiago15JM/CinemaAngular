@@ -9,7 +9,8 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { HomeComponent } from './home/home.component';
 import { TheatersComponent } from './theaters/theaters.component';
 import { ReservationsComponent } from './reservations/reservations.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { BillboardComponent } from './billboard/billboard.component'
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http'
     HomeComponent,
     TheatersComponent,
     ReservationsComponent,
+    BillboardComponent,
   ],
   imports: [
     BrowserModule,

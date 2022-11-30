@@ -5,7 +5,7 @@ exports.getBillboard = async (req, res) => {
     res.json(movies)
 }
 
-// exports.getMovie = async (req, res) => {
-//     const movie = await Movie.findOne({ 'movieid': req.params.movieId })
-//     res.json(movie)
-// }
+exports.getMovie = async (req, res) => {
+    const movie = await Movie.findOne({ 'movieid': req.params.movieId })
+    res.json(movie)
+}
