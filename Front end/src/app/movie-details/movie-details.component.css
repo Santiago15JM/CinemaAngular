@@ -1,29 +1,40 @@
 .container {
   padding: 3% 10%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1rf 1rf 1rf;
   justify-content: space-evenly;
 }
 
-img {
-  width: 30%;
+.cover{
+  grid-column: 1;
+  width: 20vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cover img{
+  width: 100%;
 }
 
 .movieInfo {
-  width: 30%;
   display: flex;
   flex-direction: column;
   margin: 0 3em;
   padding: 2em;
   background-color: #eee;
+  width: 20vw;
+  grid-column: 2;
 }
 
 .sidepane {
-  width: 30%;
   display: flex;
   flex-direction: column;
   padding: 2em;
   background-color: #eee;
   justify-content: space-between;
+  width: 20vw;
+  grid-column: 3;
 }
 
 button {

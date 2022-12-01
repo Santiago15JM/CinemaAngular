@@ -1,8 +1,10 @@
 <div class="container">
-  <img src="../assets/covers/{{ movie?.cover}}" alt="movie cover" draggable="false" />
+  <div class="cover">
+    <img src="../assets/covers/{{ movie?.cover}}" alt="movie cover" draggable="false" />
+  </div>
   <div class="movieInfo">
-    <h1>{{ movie?.title }}</h1>
-    <h2>{{ movie?.year }}</h2>
+    <h2>{{ movie?.title }}</h2>
+    <h3>{{ movie?.year }}</h3>
     <p *ngIf="movie?.description">{{ movie?.description }}</p>
   </div>
   <div class="sidepane">

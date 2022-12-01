@@ -1,6 +1,7 @@
 <div class="reservations">
     <h2>Reservar</h2>
     <div class="room">
+        {{getReservedSeats()}}
 
         <h3>Asientos</h3>
         <p id="warn" *ngIf="selectedDate == undefined">Selecciona una fecha para ver los asientos disponibles</p>
@@ -11,6 +12,7 @@
                 </td>
             </tr>
         </table>
+        {{markReservedSeats()}}
         <p>Sala: {{func?.room}}</p>
         <p>Valor total: ${{bill}}</p>
     </div>

@@ -18,17 +18,10 @@ export class ReservationsComponent implements OnInit {
   selectedDate!: Date
 
   ngOnInit(): void {
-    console.log('selDate: ' + this.selectedDate);
-    
   }
 
   ngOnChanges() {
     this.resetSeats()
-    this.getReservedSeats()
-
-    this.reservedSeats.forEach(seat => {
-      document.getElementById('s' + seat)?.classList.add('reserved')
-    });
   }
 
   toggleSeat(i: string) {
@@ -71,6 +64,7 @@ export class ReservationsComponent implements OnInit {
     let reservation = new Reservation(user, Array.from(this.selSeats), date);
 
     this.dbService.makeReservation(this.func?._id!, reservation)
+    alert('Se guardó la reservación')
     location.reload()
   }
 
@@ -87,9 +81,10 @@ export class ReservationsComponent implements OnInit {
     })
   }
 
-  changeSelDate(date: Date) {
-    this.selectedDate = date
-    this.ngOnChanges()
+  markReservedSeats() {
+    this.reservedSeats.forEach(seat => {
+      document.getElementById('s' + seat)?.classList.add('reserved')
+    });
   }
 
   resetSeats() {
@@ -98,6 +93,11 @@ export class ReservationsComponent implements OnInit {
     for (let s of Array.from(seats)) {
       s.classList.remove('reserved')
     }
+  }
+
+  changeSelDate(date: Date) {
+    this.selectedDate = date
+    this.ngOnChanges()
   }
 }
 

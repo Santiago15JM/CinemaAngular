@@ -15,12 +15,12 @@ export class TheatersComponent implements OnInit {
   selTheater!: Theater
   tElements: any
 
-  constructor(private dbService: DatabaseService) {
+  constructor() {
+  }
+  
+  ngOnInit(): void {
     this.tElements = document.getElementsByClassName('card')
     this.emmiter.emit(this.selTheater)
-  }
-
-  ngOnInit(): void {
   }
 
   changeTheater(theater: any) {

@@ -27,9 +27,8 @@ export class MoviesComponent implements OnInit {
   getFunctions() {
     this.billboard = [];
     this.functions = [];
-    
+
     this.dbService.getFunctions(this?.selTheater._id!).subscribe(data => {
-      // console.log('getting functions, th id: ' + this.selTheater._id);
       let theater: Theater = data
 
       theater.functions.forEach(func => {
@@ -40,10 +39,4 @@ export class MoviesComponent implements OnInit {
     })
   }
 
-  // getMovies() {
-  //   this.dbService.getMovies(/* get movies of certain function */).subscribe(data => {
-  //     this.billboard = data;
-  //     console.log('got movies');
-  //   })
-  // }
 }
